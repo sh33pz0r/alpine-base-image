@@ -4,12 +4,10 @@ name: default
 
 steps:
 - name: build
-  image: docker
+  image: plugins/docker
   commands:
   - docker build .
-  volumes:
-  - name: docker
-    path: /var/run/docker.sock
+
 
   when:
     branch:
@@ -17,10 +15,6 @@ steps:
     event:
     - push
     - pull-request
-volumes:
-- name: docker
-  host:
-    path: /var/run/docker.sock
     
 trigger:
   branch:
