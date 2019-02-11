@@ -7,3 +7,18 @@ name: default
     repo: yuri1987/alpine.base
     tags: 
       - latest
+    when:
+      event: [ push, tag ]
+      local: false
+      
+  publish_alpine:
+    image: plugins/docker
+    group: release
+    pull: true
+    secrets: [ docker_username, docker_password ]
+    default_tags: true
+    default_suffix: alpine
+    repo: yuri1987/alpine.base
+    when:
+      event: [ push, tag ]
+      local: false
