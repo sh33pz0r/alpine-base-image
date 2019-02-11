@@ -1,0 +1,6 @@
+pipeline:
+  build:
+    image: plugins/docker
+    repo: yuri1987/alpine.base
+    tags: 
+      - latest
