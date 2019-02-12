@@ -4,7 +4,7 @@ FROM alpine:${apline_ver}
 ARG apline_ver
 ARG gomplate_ver=3.1.0
 
-COPY --from=hairyhenderson/gomplate:v3.2.0-slim /bin/gomplate /bin/gomplate
+COPY --from=hairyhenderson/gomplate:v3.2.0-alpine /bin/gomplate /bin/gomplate
 
 RUN addgroup -g 9001 -S runner && \
     adduser -u 9001 -S runner -G runner && \
