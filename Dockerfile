@@ -1,10 +1,10 @@
-ARG apline_ver=3.8
+ARG apline_ver=3.9
 FROM alpine:${apline_ver}
 
 ARG apline_ver
-ARG gomplate_ver=3.1.0
+ARG gomplate_ver=3.3.1
 
-COPY --from=hairyhenderson/gomplate:v3.2.0-alpine /bin/gomplate /bin/gomplate
+COPY --from=hairyhenderson/gomplate:v3.3.1-alpine /bin/gomplate /bin/gomplate
 
 RUN addgroup -g 9001 -S runner && \
     adduser -u 9001 -S runner -G runner && \
